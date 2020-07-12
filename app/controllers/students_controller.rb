@@ -9,16 +9,16 @@ class StudentsController < ApplicationController
 
   end
 
-  def activate 
+  def activate
       @student = Student.find_by_id(params[:id])
-      if @student.active == true 
+      if @student.active == true
         @student.update(:active => false)
-      else 
+      else
         @student.update(:active => true)
-      end 
+      end
 
       redirect_to student_path(@student)
-  end 
+  end
 
   private
 
