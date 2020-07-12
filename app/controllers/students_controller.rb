@@ -11,6 +11,7 @@ class StudentsController < ApplicationController
 
   def activate
       @student = Student.find_by_id(params[:id])
+      #default value is false
       if @student.active == true
         @student.update(:active => false)
       else
